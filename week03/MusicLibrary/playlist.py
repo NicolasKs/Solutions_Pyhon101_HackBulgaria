@@ -61,7 +61,7 @@ class Playlist():
 		self.shuffle = shuffle
 		self.song_list = []
 		self.curr_song = 0
-		self.state = 0
+		self.state =0
 
 
 	def _eq__(self,other):
