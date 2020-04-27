@@ -1,0 +1,6 @@
+Update Languages
+SET answered = 1
+Where Language = "Python" 
+Update Languages
+SET answered = 1
+Where Language = "GO"

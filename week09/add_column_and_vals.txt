@@ -1,0 +1,26 @@
+ALTER TABLE Languages
+  add rating INTEGER rating(1,9)
+Update Languages
+SET raiting = 9
+Where Language = "Python"
+Update Languages
+SET raiting = 6
+Where Language = "GO"
+Update Languages
+SET raiting = 7
+Where Language = "Java"
+Update Languages
+SET raiting = 4
+Where Language = "Haskell"
+Update Languages
+SET raiting = 6
+Where Language = "C#"
+Update Languages
+SET raiting = 5
+Where Language = "Ruby"
+Update Languages
+SET raiting = 2
+Where Language = "C++"
+Update Languages
+SET raiting = 6
+Where Language = "JavaScript" 
