@@ -1,0 +1,79 @@
+1.Напишете заявка, която извежда адреса на студио ‘MGM’
+
+SELECT Address
+FROM STUDIO
+WHERE name = "MGM"
+
+
+2.Напишете заявка, която извежда рождената дата на актрисата Kim Basinger
+
+SELECT birthdate
+FROM MOVIESTAR
+WHERE Name = "Kim Basinger"
+
+
+3.Напишете заявка, която извежда имената всички продуценти на филми с нетни активи (networth) над 10 000 000 долара
+
+SELECT name
+FROM MOVIEEXEC
+WHERE Networth > 10000000
+
+
+4.Напишете заявка, която извежда имената на всички актьори, които са мъже или живеят на Prefect Rd
+
+SELECT Name
+From MOVIESTAR
+Where Gender = "M" OR Address = "Perfect Rd."
+
+
+5.Добавате нова филмова звезда 'Zahari Baharov', с адрес и рожденна дата по ваш избор.
+
+INSERT INTO MOVIESTAR
+VALUES ("Zahari Baharov", "Gore", "M", "1969-06-09")
+
+
+6.Изтрийте всички студия, които имат в адреса си числото 5.
+
+DELETE FROM STUDIO
+Where Address LIKE "%5%"
+
+
+7.Променете студио да бъде "Fox" на тези филми, които в имената си имат 'star.
+
+UPDATE MOVIE
+SET studioname = "FOX"
+Where title Like "%Star%"
+
+
+8.Напишете заявка, която извежда имената на актьорите мъже участвали в ‘Terms of Endearment’
+
+SELECT starname
+FROM STARSIN
+Inner JOin MOVIESTAR on MOVIESTAR.name == STARSIN.Starname
+WHERE STARSIN.movietitle == "Terms of Endearment" And MOVIESTAR.gender == "M"
+
+
+9.Напишете заявка, която извежда имената на актьорите участвали във филми продуцирани от ‘MGM’през 1995 г.
+
+SELECT starname
+FROM STARSIN
+Inner JOin MOVIE on MOVIE.title == STARSIN.movietitle
+WHERE MOVIE.YEAR == 1995 AND MOVIE.STUDIONAME == "MGM"
+
+
+10.Добавете колона "име на президент"на таблицата Студио и съответно и задайте стойности.Напишете заявка, която извежда името на президента на ‘MGM’
+
+Alter TABLE STUDIO
+ADD PresidentName VARCHar(60)
+
+UPDATE STUDIO
+Set presidentname = "Gosho ot Pochivka"
+WHERE name == "MGM"
+
+UPDATE STUDIO
+Set presidentname = "Qvkata DLG"
+WHERE name == "USA Entertainm."
+
+SELECT presidentname 
+FROM STUDIO
+WHERE name == 'MGM';
